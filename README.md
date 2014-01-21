@@ -9,4 +9,4 @@
 * Can has config
 * [Can has bugs](https://github.com/jomo/bashweb/issues/new?title=can+has+bugs&body=sux)
 
-¯\_(ツ)_/¯
+¯\\_(ツ)_/¯
