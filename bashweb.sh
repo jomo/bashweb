@@ -1,6 +1,6 @@
 #!/bin/bash
 # bashweb server by jomo
-
+set -o pipefail
 
 source bashweb.conf                                                                   # config file
 
@@ -10,7 +10,7 @@ if ! [ -p $response ]; then
   mkfifo $response
 fi
 
-cd "$web_root"
+cd "$web_root" || exit 1
 
 echo "Starting bashweb server on ${hostname}:${port}${web_root}"
 echo "press CTRL-C to exit"
@@ -54,5 +54,5 @@ while true ; do
     echo -e "$log"
 
     echo "$out" | cat > $response
-  )
+  ) || exit 1
 done
